@@ -26,5 +26,5 @@ View live NBA scores, up-to-date team rosters, and current standings.
 - View Standings
   - Display every team's number of wins and losses (sorted by wins).
   
-  ### API
-  Base URL: data.nba.net/10s/prod/v1/
+ ### API
+ Base URL: http://data.nba.net/10s/prod/v1/
