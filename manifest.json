@@ -1,0 +1,26 @@
+{
+  "name": "BuzzerBeater",
+  "author": "Anuj Shah", 
+  "description": "View NBA scores, rosters, and standings.",
+  "version": "1.0",
+  "icons": 
+  {
+      "16": "16.png",
+      "32": "32.png",
+      "48": "48.png",
+	  "128": "128.png"
+  },
+  "chrome_url_overrides":
+  {
+	"newtab": "newtab.html"
+  },
+  "options_page": "options.html",
+  "browser_action":
+  {
+	"default_icon": "buzzer_beater.png",
+	"default_popup": "popup.html",
+	"default_title": "Look up NBA scores, rosters, and standings!"
+  },
+  "permissions": ["<all_urls>"],
+  "manifest_version": 2
+} 

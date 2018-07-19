@@ -1,0 +1,76 @@
+---------- BuzzerBeater ----------
+
+Google Chrome Extension
+Author: Anuj Shah
+Description: View NBA scores, rosters, and standings.
+API --
+	Base URL: data.nba.net/10s/prod/v1/
+
+--- Endpoints ---
+
+Key --
+	[date] = date in format YYYYMMDD
+	[year] = year in four digit format (YYYY)
+	[teamName] = name of the team (i.e. lakers)
+
+Daily Scores:
+data.nba.net/10s/prod/v1/[date]/scoreboard.json
+- game.isGameActivated: game is in progress
+- game.vTeam.triCode: three-digit abbreviation for away team
+- game.hTeam.triCode: three-digit abbreviation for home team
+- game.vTeam.score: score for away team
+- game.hTeam.score: score for home team
+- game.period.current: quarter of the game
+- game.nugget.text: short summary of the game
+
+Teams:
+data.nba.net/10s/prod/v1/[year]/teams.json
+
+Players:
+data.nba.net/10s/prod/v1/[year]/players.json
+- player.firstName: first name of player
+- player.lastName: last name of player
+- player.jersey: jersey number of player
+- player.pos: position of player (i.e. G, F, C)
+
+Team Roster:
+data.nba.net/10s/prod/v1/[year]/teams/[teamName]/roster.json
+
+Standings:
+data.nba.net/10s/prod/v1/[date]/standings_all.json
+
+--- ESPN URLs ---
+
+Key --
+	[date] = date in format YYYYMMDD
+	[year] = year in four digit format (YYYY)
+
+Scores: http://espn.go.com/nba/scoreboard?date=[date]
+Standings: http://www.espn.com/nba/standings/_/season/[year]
+
+--- Objectives ---
+
+- Provide users with a simple way to check live scores.
+- Simplify the task of finding game highlights and extended box scores.
+
+--- Features/Capabilities ---
+
+- Search for old, live, and upcoming games by changing the date.
+- View current standings and team rosters.
+- Watch highlights and view top performers of each game by clicking the 'More Info' button.
+- View today's games on a scrolling ticker by opening a new tab.
+
+--- Buttons ---
+
+Submit -- sends the request to the server to obtain data
+Refresh -- updates the box scores
+View Standings -- displays every team's number of wins and losses (sorted by wins)
+View Teams -- allows users to see all of the teams in the league/association
+Show Players -- shows a list of players on the selected team and their respective positions & jersey numbers
+
+--- Side Notes ---
+
+- Scores refresh when the pop-up is opened.
+- The user can use the date-picker to select any date between 2010 and 2030.
+- Games are organized by when they are scheduled.
+- The ticker's speed depends on the number of games.
